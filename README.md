@@ -45,6 +45,7 @@ authorEmail = "ribice@gmail.com" # Author email
 
 [params.assets]
 customCSS = ["css/custom.css"]
+googleFonts = []
 
 [params.info]
 adsense = "" # Adsense ID (ID only, without ca-pub-)
@@ -53,9 +54,12 @@ homeTitle = "" # Title for home page
 poweredby = true # Adds powered by hugo and kiss below Copyright
 related = true # Includes related articles at the bottom of the article
 codeCopy = true # Add copy button above code blocks
+taxonomiesCount = true # Add taxonomies count
 
 [params.features]
 disqusOnDemand = true  # Load Disqus comments on click
+mathjax = false
+katex = false
 
 
 [params.opengraph.facebook]
@@ -67,6 +71,7 @@ pageID = ""
 page = "" # Twitter Page username. If not set, params.social.twitter will be used.
 
 [params.social]
+mastodon = "mastodon.instance/@ribice"
 twitter = "ribicemir"
 github = "ribice"
 email = "ribice@gmail.com"
@@ -82,6 +87,15 @@ platforms = ["github","facebook","twitter","instagram","email","codepen","linked
 [params.matomoAnalytics]
 siteID = 1
 rootURL = "//matomo.example.com/"
+
+[params.fathomAnalytics]
+rootURL = "//fathom.example.com/"
+
+[params.hotjarAnalytics]
+hjid = 1
+
+[params.plausibleAnalytics]
+domain = ribice.ba
 
 [taxonomies]
 tag ="tags"
@@ -115,7 +129,7 @@ If you want to change the order of the social menu icons, modify the `[params.so
 
 ```toml
 [params.social.config]
-platforms = ["github","facebook","twitter","instagram","email","codepen","linkedin"]
+platforms = ["github","facebook","mastodon","twitter","instagram","email","codepen","linkedin"]
 ```
 
 The social menu icons will appear in the order you specify in the `platforms` array.
@@ -167,7 +181,7 @@ on demand loading:
 
 ```toml
 [params.features]
-disqusOnDemand = true 
+disqusOnDemand = true
 ```
 
 ## Single Page Configuration
@@ -175,6 +189,8 @@ disqusOnDemand = true
 ```
 tags: ["Android", "Apple", "iPhone"] # Adds tags to the post
 image: https://example.com/img/1/image.jpg # Cover used for OpenGraph and Twitter Cards
+css: https://example.com/css/pagestyle.css # Include additional CSS stylesheet
+js: https://example.com/js/script.js # Include JS file
 adsenseTop: true # If adsense property is set (params.info.adsense) include an ad above content
 adsenseBottom: true # If adsense property is set (params.info.adsense) include an ad below content
 hidden: true # If true, page will not be shown in the list view
